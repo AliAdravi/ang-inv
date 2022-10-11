@@ -1,0 +1,38 @@
+<h1>Home is working!</h1>
+<h3>Title: {{title}}</h3>
+
+<child-comp>
+    <ul questions>
+        <li>What</li>
+        <li>When</li>
+        <li>Where</li>
+        <li>Who</li>
+    </ul>
+    <div>This is the description without content selector</div>
+</child-comp>
+
+<ul *ngIf="list">
+    <li *ngFor="let i of list | orderBy">{{i}}</li>
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Zip Code</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.address.street}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.address.zipcode}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
